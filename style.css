@@ -1,3 +1,4 @@
+/* Reset & Base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
   color: #333;
 }
 
+/* Header */
 .header {
   text-align: center;
   background: #99ccff;
@@ -24,12 +26,14 @@ body {
   color: #004080;
 }
 
+/* Container */
 .container {
   min-height: 60vh;
   padding: 20px;
   text-align: center;
 }
 
+/* Bottom Navigation */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -57,10 +61,21 @@ body {
   color: white;
 }
 
+/* Responsive untuk fon kecil */
+@media (max-width: 480px) {
+  .bottom-nav button {
+    font-size: 11px;   /* kecikkan font */
+    padding: 6px;      /* kecikkan padding */
+    margin: 2px;       /* kecikkan margin */
+  }
+}
+
+/* Hidden sections */
 .hidden {
   display: none;
 }
 
+/* Services */
 .services-card {
   background: #cce6ff;
   padding: 20px;
@@ -80,6 +95,7 @@ body {
   padding-left: 20px;
 }
 
+/* Contact */
 .contact-card {
   background: #cce6ff;
   padding: 15px;
@@ -89,6 +105,7 @@ body {
   line-height: 1.6;
 }
 
+/* Feedback Form */
 #form-section form {
   display: flex;
   flex-direction: column;
@@ -102,11 +119,13 @@ body {
   border: 1px solid #99ccff;
 }
 
+/* Direction */
 #direction-section iframe {
   margin-top: 10px;
   border-radius: 15px;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   background: #99ccff;
