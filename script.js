@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const servicesSection = document.getElementById("services-section");
   const feedbackForm = document.getElementById("feedbackForm");
 
+  // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       // Hide all sections
@@ -28,19 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (btn.dataset.tab === "services") {
         content.classList.add("hidden");
         servicesSection.classList.remove("hidden");
+      } else if (btn.dataset.tab === "about") {
+        content.innerHTML = `<h2>About</h2><p>Portal ini dibangunkan oleh Abang Mie untuk komuniti dan pelanggan.</p>`;
       } else {
         content.innerHTML = `<h2>${btn.innerText}</h2><p>Kandungan kosong untuk ${btn.innerText}.</p>`;
       }
     });
   });
 
+  // Feedback form submission with EmailJS
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const formData = new FormData(feedbackForm);
-    const jsonData = {};
-    formData.forEach((value, key) => jsonData[key] = value);
-    console.log("Form Data JSON:", JSON.stringify(jsonData, null, 2));
-    alert("Feedback submitted!");
-    feedbackForm.reset();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#feedbackForm")
+      .then(() => {
+        alert("Feedback berjaya dihantar ke email Abang Mie!");
+        feedbackForm.reset();
+      }, (error) => {
+        console.error("Error:", error);
+        alert("Ada masalah hantar email. Sila cuba lagi.");
+      });
   });
 });
