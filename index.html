@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abang Mie Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Branding -->
+  <header class="header">
+    <h1>Abang Mie</h1>
+    <p>Personal Web Portal</p>
+  </header>
+
+  <main class="container">
+    <!-- Default Content -->
+    <section id="content">
+      <h2>Welcome</h2>
+      <p>Portal kosong untuk preview.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services-section" class="hidden">
+      <h2>Services</h2>
+      <div class="services-card">
+        <h3>Stesen Minyak BHPetrol</h3>
+        <ul>
+          <li>Infiniti RON95</li>
+          <li>Infiniti RON97</li>
+          <li>Diesel Euro5 B10</li>
+          <li>Diesel Euro5 B7</li>
+        </ul>
+
+        <h3>BHPetroMart</h3>
+        <ul>
+          <li>Touch N Go</li>
+          <li>Ewallet</li>
+          <li>Prepay</li>
+          <li>ATM machine (Bank Islam)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="form-section" class="hidden">
+      <form id="feedbackForm">
+        <h2>Feedback Form</h2>
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="hidden">
+      <h2>Contact Us</h2>
+      <div class="contact-card">
+        <p><strong>Abang Mie (Rozaimi)</strong></p>
+        <p>Pengurus</p>
+        <p>BHPetrol Padang Serai</p>
+        <p>No 349, Jalan Mahsuri 2A</p>
+        <p>Taman Mahsuri</p>
+        <p>09400 Padang Serai</p>
+        <p>Kulim, Kedah</p>
+        <p>Tel : <a href="tel:+6044886457">+604-4886457</a></p>
+      </div>
+    </section>
+
+    <!-- Direction Section -->
+    <section id="direction-section" class="hidden">
+      <h2>Direction</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.123456789!2d100.541!3d5.544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b123456789abc%3A0x9876543210abcdef!2sBHPetrol%20Padang%20Serai!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius:15px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Navigation Tabs -->
+  <nav class="bottom-nav">
+    <button data-tab="about">About</button>
+    <button data-tab="services">Services</button>
+    <button data-tab="feedback">Feedback</button>
+    <button data-tab="contact">Contact Us</button>
+    <button data-tab="direction">Direction</button>
+  </nav>
+
+  <!-- Footer Branding -->
+  <footer class="footer">
+    <p>&copy; 2026 Abang Mie</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
