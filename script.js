@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
 
-  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     adminSection.classList.add("hidden");
   }
 
-  // Navigation tab logic
   function showTab(tab) {
     hideAll();
     switch (tab) {
@@ -39,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
           adminSection.classList.remove("hidden");
         } else {
           alert("Password salah!");
-          content.classList.remove("hidden"); // fallback balik ke Home
+          content.classList.remove("hidden");
         }
         break;
       default: content.classList.remove("hidden");
@@ -109,6 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Bila page mula → load gambar
   loadImagesFromLocalStorage();
 });
