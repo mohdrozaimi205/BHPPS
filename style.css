@@ -1,4 +1,3 @@
-/* Reset asas */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,7 +5,6 @@ body {
   color: #333;
 }
 
-/* Header */
 .header {
   position: relative;
   text-align: center;
@@ -28,7 +26,6 @@ body {
   color: #004080;
 }
 
-/* Gear icon */
 .gear {
   position: absolute;
   top: 15px;
@@ -37,18 +34,10 @@ body {
   font-size: 22px;
   transition: transform 0.3s ease;
 }
-.gear:hover {
-  transform: rotate(90deg);
-}
+.gear:hover { transform: rotate(90deg); }
 
-/* Container */
-.container {
-  min-height: 60vh;
-  padding: 20px;
-  text-align: center;
-}
+.container { padding: 20px; text-align: center; }
 
-/* Navigation bawah */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -70,25 +59,12 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
+.bottom-nav button:hover { background: #80bfff; color: white; }
 
-.bottom-nav button:hover {
-  background: #80bfff;
-  color: white;
-}
-
-@media (max-width: 480px) {
-  .bottom-nav button {
-    font-size: 11px;
-    padding: 6px;
-    margin: 2px;
-  }
-}
-
-/* Hidden class */
 .hidden { display: none; }
 
-/* Services card */
-.services-card {
+/* Services & Contact cards */
+.services-card, .contact-card, #admin-section {
   background: #cce6ff;
   padding: 20px;
   border-radius: 15px;
@@ -97,104 +73,34 @@ body {
   line-height: 1.8;
 }
 
-.services-card h3 {
-  color: #003366;
-  margin-top: 10px;
-}
-
-.services-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* Contact card */
-.contact-card {
-  background: #cce6ff;
-  padding: 15px;
-  border-radius: 15px;
-  display: inline-block;
-  text-align: left;
-  line-height: 1.6;
-}
-
 /* Feedback form */
-#form-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+#form-section form { display: flex; flex-direction: column; gap: 10px; }
+#form-section input, #form-section textarea {
+  padding: 10px; border-radius: 10px; border: 1px solid #99ccff;
 }
-
-#form-section input,
-#form-section textarea {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #99ccff;
-}
-
 #form-section button {
-  background: #80bfff;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+  background: #80bfff; color: white; border: none;
+  padding: 10px; border-radius: 10px; cursor: pointer;
 }
+#form-section button:hover { background: #3399ff; }
 
-#form-section button:hover {
-  background: #3399ff;
-}
-
-/* Direction section */
-#direction-section {
-  padding: 20px;
-  text-align: center;
-}
-
-#direction-section iframe {
-  margin-top: 10px;
-  border-radius: 15px;
-  width: 100%;
-  height: 450px;
-}
-
-/* Gallery (About) */
+/* Gallery */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
 }
 .gallery img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #99ccff;
+  width: 150px; height: 150px; object-fit: cover;
+  border-radius: 10px; border: 2px solid #99ccff;
   transition: transform 0.3s ease;
 }
-.gallery img:hover {
-  transform: scale(1.05);
-}
+.gallery img:hover { transform: scale(1.05); }
 
-/* Admin / Control Panel */
-#admin-section {
-  background: #f0f8ff;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-#admin-section h2 {
-  color: #003366;
-}
-
+/* Control Panel */
+#admin-section h2 { color: #003366; text-align: center; }
 #adminUpload {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #99ccff;
-  border-radius: 10px;
-  background: #fff;
-  cursor: pointer;
+  margin-top: 15px; padding: 10px;
+  border: 1px solid #99ccff; border-radius: 10px;
+  background: #fff; cursor: pointer;
 }
 
 /* Footer */
