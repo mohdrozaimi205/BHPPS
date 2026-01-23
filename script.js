@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminUpload = document.getElementById("adminUpload");
   const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
+  const bottomNav = document.querySelector(".bottom-nav");
 
-  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -26,17 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Navigation tab logic
+  function showTab(tab) {
+    hideAll();
+    switch (tab) {
+      case "feedback": formSection.classList.remove("hidden"); break;
+      case "direction": directionSection.classList.remove("hidden"); break;
+      case "contact": contactSection.classList.remove("hidden"); break;
+      case "services": servicesSection.classList.remove("hidden"); break;
+      case "about": aboutSection.classList.remove("hidden"); break;
+      case "admin": adminSection.classList.remove("hidden"); break;
+      default: content.classList.remove("hidden");
+    }
+  }
+
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      hideAll();
-      switch (btn.dataset.tab) {
-        case "feedback": formSection.classList.remove("hidden"); break;
-        case "direction": directionSection.classList.remove("hidden"); break;
-        case "contact": contactSection.classList.remove("hidden"); break;
-        case "services": servicesSection.classList.remove("hidden"); break;
-        case "about": aboutSection.classList.remove("hidden"); break;
-        default: content.classList.remove("hidden");
-      }
+      showTab(btn.dataset.tab);
     });
   });
 
@@ -58,12 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gear icon → password → buka Control Panel
+  // Gear icon → password → tambah tab Admin
   gear.addEventListener("click", () => {
-    const password = prompt("Masukkan password untuk buka Control Panel:");
+    const password = prompt("Masukkan password untuk buka Admin:");
     if (password === "bhpetrolpadangserai123") {
-      hideAll();
-      adminSection.classList.remove("hidden");
+      // Tambah butang Admin jika belum ada
+      if (!document.querySelector("button[data-tab='admin']")) {
+        const adminBtn = document.createElement("button");
+        adminBtn.textContent = "Admin";
+        adminBtn.dataset.tab = "admin";
+        bottomNav.appendChild(adminBtn);
+        adminBtn.addEventListener("click", () => showTab("admin"));
+      }
+      showTab("admin");
     } else {
       alert("Password salah!");
     }
@@ -108,6 +120,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Bila page mula → load gambar
   loadImagesFromLocalStorage();
 });
