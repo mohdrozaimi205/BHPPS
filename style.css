@@ -69,25 +69,6 @@ body {
   display: none;
 }
 
-.services-card {
-  background: #cce6ff;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: left;
-  display: inline-block;
-  line-height: 1.8;
-}
-
-.services-card h3 {
-  color: #003366;
-  margin-top: 10px;
-}
-
-.services-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
 .contact-card {
   background: #cce6ff;
   padding: 15px;
