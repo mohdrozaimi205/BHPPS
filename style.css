@@ -1,45 +1,41 @@
-/* Reset & Base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #111; /* hitam gelap */
-  color: #f2f2f2;   /* teks putih kelabu */
+  background: #e6f2ff;
+  color: #333;
 }
 
-/* Header */
 .header {
   text-align: center;
-  background: #000; /* hitam solid */
+  background: #99ccff;
   padding: 20px;
-  border-bottom: 4px solid #ffcc00; /* kuning BHPetrol */
+  border-radius: 0 0 30px 30px;
 }
 
 .header h1 {
   margin: 0;
   font-size: 28px;
-  color: #ffcc00;
+  color: #003366;
 }
 
 .header p {
   margin: 0;
   font-size: 14px;
-  color: #f2f2f2;
+  color: #004080;
 }
 
-/* Container */
 .container {
   min-height: 60vh;
   padding: 20px;
   text-align: center;
 }
 
-/* Bottom Navigation */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
-  background: #000;
+  background: #99ccff;
   padding: 10px;
-  border-top: 4px solid #ffcc00;
+  border-radius: 20px 20px 0 0;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -49,20 +45,18 @@ body {
   flex: 1;
   margin: 5px;
   padding: 10px;
-  background: #222;
+  background: #cce6ff;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: 14px;
-  color: #ffcc00;
   cursor: pointer;
 }
 
 .bottom-nav button:hover {
-  background: #ffcc00;
-  color: #000;
+  background: #80bfff;
+  color: white;
 }
 
-/* Responsive untuk fon kecil */
 @media (max-width: 480px) {
   .bottom-nav button {
     font-size: 11px;
@@ -71,24 +65,21 @@ body {
   }
 }
 
-/* Hidden sections */
 .hidden {
   display: none;
 }
 
-/* Services */
 .services-card {
-  background: #222;
+  background: #cce6ff;
   padding: 20px;
   border-radius: 15px;
   text-align: left;
   display: inline-block;
   line-height: 1.8;
-  color: #f2f2f2;
 }
 
 .services-card h3 {
-  color: #ffcc00;
+  color: #003366;
   margin-top: 10px;
 }
 
@@ -97,36 +88,31 @@ body {
   padding-left: 20px;
 }
 
-/* Contact */
 .contact-card {
-  background: #222;
+  background: #cce6ff;
   padding: 15px;
   border-radius: 15px;
   display: inline-block;
   text-align: left;
   line-height: 1.6;
-  color: #f2f2f2;
 }
 
-/* Feedback Form */
 #form-section form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#form-section input, 
+#form-section input,
 #form-section textarea {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #ffcc00;
-  background: #111;
-  color: #f2f2f2;
+  border: 1px solid #99ccff;
 }
 
 #form-section button {
-  background: #ffcc00;
-  color: #000;
+  background: #80bfff;
+  color: white;
   border: none;
   padding: 10px;
   border-radius: 10px;
@@ -134,10 +120,9 @@ body {
 }
 
 #form-section button:hover {
-  background: #ffaa00;
+  background: #3399ff;
 }
 
-/* Direction */
 #direction-section {
   padding: 20px;
   text-align: center;
@@ -148,16 +133,14 @@ body {
   border-radius: 15px;
   width: 100%;
   height: 450px;
-  border: 2px solid #ffcc00;
 }
 
-/* Footer */
 .footer {
   text-align: center;
-  background: #000;
+  background: #99ccff;
   padding: 10px;
-  border-top: 4px solid #ffcc00;
+  border-radius: 30px 30px 0 0;
   font-size: 12px;
-  color: #ffcc00;
-  margin-bottom: 60px; /* space for nav */
+  color: #003366;
+  margin-bottom: 60px;
 }
