@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Ambil semua elemen
   const navButtons = document.querySelectorAll(".bottom-nav button");
   const content = document.getElementById("content");
   const aboutSection = document.getElementById("about-section");
@@ -32,12 +33,25 @@ document.addEventListener("DOMContentLoaded", () => {
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       hideAll();
-      if (btn.dataset.tab === "feedback") formSection.classList.remove("hidden");
-      else if (btn.dataset.tab === "direction") directionSection.classList.remove("hidden");
-      else if (btn.dataset.tab === "contact") contactSection.classList.remove("hidden");
-      else if (btn.dataset.tab === "services") servicesSection.classList.remove("hidden");
-      else if (btn.dataset.tab === "about") aboutSection.classList.remove("hidden");
-      else content.classList.remove("hidden");
+      switch (btn.dataset.tab) {
+        case "feedback":
+          formSection.classList.remove("hidden");
+          break;
+        case "direction":
+          directionSection.classList.remove("hidden");
+          break;
+        case "contact":
+          contactSection.classList.remove("hidden");
+          break;
+        case "services":
+          servicesSection.classList.remove("hidden");
+          break;
+        case "about":
+          aboutSection.classList.remove("hidden");
+          break;
+        default:
+          content.classList.remove("hidden");
+      }
     });
   });
 
@@ -120,5 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     imageModal.classList.add("hidden");
   });
 
+  // Load gambar bila page mula
   loadImagesFromLocalStorage();
 });
