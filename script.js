@@ -11,9 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeTitle = document.getElementById("homeTitle");
   const gear = document.getElementById("controlPanel");
   const adminUpload = document.getElementById("adminUpload");
+  const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
+  const imageModal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeModal = document.getElementById("closeModal");
 
-  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -49,12 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
         .then(() => {
-          alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
+          alert("Feedback berjaya dihantar!");
           feedbackForm.reset();
-        }, (error) => {
-          console.error("EmailJS Error:", error);
-          alert("Ada masalah hantar email. Sila cuba lagi.");
-        });
+        }, () => alert("Ada masalah hantar email."));
     });
   }
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Upload gambar dari Control Panel → masuk ke About
+  // Upload gambar → masuk ke About
   adminUpload.addEventListener("change", (e) => {
     const files = e.target.files;
     for (let file of files) {
@@ -77,11 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
       reader.onload = function(ev) {
         const img = document.createElement("img");
         img.src = ev.target.result;
+        img.addEventListener("click", () => openModal(ev.target.result));
         aboutGallery.appendChild(img);
         saveImageToLocalStorage(ev.target.result);
       };
       reader.readAsDataURL(file);
     }
+  });
+
+  // Clear Gallery
+  clearGalleryBtn.addEventListener("click", () => {
+    localStorage.removeItem("aboutImages");
+    aboutGallery.innerHTML = "";
+    alert("Gallery telah dikosongkan!");
   });
 
   // Simpan gambar ke localStorage
@@ -91,15 +99,25 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("aboutImages", JSON.stringify(storedImages));
   }
 
-  // Load gambar dari localStorage bila page dibuka
+  // Load gambar dari localStorage
   function loadImagesFromLocalStorage() {
     let storedImages = JSON.parse(localStorage.getItem("aboutImages")) || [];
     storedImages.forEach(imgData => {
       const img = document.createElement("img");
       img.src = imgData;
+      img.addEventListener("click", () => openModal(imgData));
       aboutGallery.appendChild(img);
     });
   }
+
+  // Modal view
+  function openModal(src) {
+    modalImg.src = src;
+    imageModal.classList.remove("hidden");
+  }
+  closeModal.addEventListener("click", () => {
+    imageModal.classList.add("hidden");
+  });
 
   loadImagesFromLocalStorage();
 });
