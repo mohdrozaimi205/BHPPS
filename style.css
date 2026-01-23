@@ -6,6 +6,7 @@ body {
 }
 
 .header {
+  position: relative;
   text-align: center;
   background: #99ccff;
   padding: 20px;
@@ -16,12 +17,21 @@ body {
   margin: 0;
   font-size: 28px;
   color: #003366;
+  cursor: pointer;
 }
 
 .header p {
   margin: 0;
   font-size: 14px;
   color: #004080;
+}
+
+.gear {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .container {
@@ -65,9 +75,7 @@ body {
   }
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .services-card {
   background: #cce6ff;
@@ -78,15 +86,9 @@ body {
   line-height: 1.8;
 }
 
-.services-card h3 {
-  color: #003366;
-  margin-top: 10px;
-}
+.services-card h3 { color: #003366; margin-top: 10px; }
 
-.services-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
+.services-card ul { list-style-type: disc; padding-left: 20px; }
 
 .contact-card {
   background: #cce6ff;
@@ -97,14 +99,9 @@ body {
   line-height: 1.6;
 }
 
-#form-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+#form-section form { display: flex; flex-direction: column; gap: 10px; }
 
-#form-section input,
-#form-section textarea {
+#form-section input, #form-section textarea {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #99ccff;
@@ -119,20 +116,29 @@ body {
   cursor: pointer;
 }
 
-#form-section button:hover {
-  background: #3399ff;
-}
+#form-section button:hover { background: #3399ff; }
 
-#direction-section {
-  padding: 20px;
-  text-align: center;
-}
+#direction-section { padding: 20px; text-align: center; }
 
 #direction-section iframe {
   margin-top: 10px;
   border-radius: 15px;
   width: 100%;
   height: 450px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #99ccff;
 }
 
 .footer {
