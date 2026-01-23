@@ -1,20 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll(".bottom-nav button");
   const content = document.getElementById("content");
+  const aboutSection = document.getElementById("about-section");
   const formSection = document.getElementById("form-section");
   const directionSection = document.getElementById("direction-section");
   const contactSection = document.getElementById("contact-section");
   const servicesSection = document.getElementById("services-section");
   const feedbackForm = document.getElementById("feedbackForm");
+  const homeTitle = document.getElementById("homeTitle");
+  const gear = document.getElementById("controlPanel");
+  const imageUpload = document.getElementById("imageUpload");
+  const aboutGallery = document.getElementById("aboutGallery");
 
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+      // Hide semua section dulu
+      content.classList.add("hidden");
+      aboutSection.classList.add("hidden");
       formSection.classList.add("hidden");
       directionSection.classList.add("hidden");
       contactSection.classList.add("hidden");
       servicesSection.classList.add("hidden");
-      content.classList.add("hidden");
 
       if (btn.dataset.tab === "feedback") {
         formSection.classList.remove("hidden");
@@ -25,9 +32,21 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (btn.dataset.tab === "services") {
         servicesSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "about") {
+        aboutSection.classList.remove("hidden");
+      } else {
         content.classList.remove("hidden");
       }
     });
+  });
+
+  // Klik tajuk untuk balik Home
+  homeTitle.addEventListener("click", () => {
+    content.classList.remove("hidden");
+    aboutSection.classList.add("hidden");
+    formSection.classList.add("hidden");
+    directionSection.classList.add("hidden");
+    contactSection.classList.add("hidden");
+    servicesSection.classList.add("hidden");
   });
 
   // Feedback form submission using sendForm
@@ -42,5 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("EmailJS Error:", error);
         alert("Ada masalah hantar email. Sila cuba lagi.");
       });
+  });
+
+  // Gear icon untuk upload gambar ke About
+  gear.addEventListener("click", () => {
+    imageUpload.click(); // buka file picker
+  });
+
+  imageUpload.addEventListener("change", (e) => {
+    const files = e.target.files;
+    for (let file of files) {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const img = document.createElement("img");
+        img.src = ev.target.result;
+        aboutGallery.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
   });
 });
