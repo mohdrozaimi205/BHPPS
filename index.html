@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BHPetrol Padang Serai</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="header">
-    <h1 id="homeTitle">BHPetrol Padang Serai</h1>
-    <p>Selamat datang ke portal rasmi BHPetrol Padang Serai</p>
-    <div id="controlPanel" class="gear">⚙️</div>
-  </header>
+<header class="header">
+  <h1 id="homeTitle">BHPetrol Padang Serai</h1>
+  <p>Selamat datang ke portal rasmi BHPetrol Padang Serai</p>
+  <div id="controlPanel" class="gear">⚙️</div>
+</header>
 
-  <main class="container">
-    <section id="content">
-      <h2>Welcome! Selamat Datang!</h2>
-    </section>
+<main class="container">
+  <section id="content">
+    <h2>Welcome! Selamat Datang!</h2>
+  </section>
 
-    <section id="about-section" class="hidden">
-      <h2>About</h2>
-      <div id="aboutGallery" class="gallery"></div>
-    </section>
+  <section id="about-section" class="hidden">
+    <h2>About</h2>
+    <div id="aboutGallery" class="gallery"></div>
+  </section>
+
+  <!-- ✅ Control Panel page hidden -->
+  <section id="admin-section" class="hidden">
+    <h2>Control Panel</h2>
+    <p>Upload gambar untuk About:</p>
+    <input type="file" id="adminUpload" accept="image/*" multiple>
+  </section>
+
+  <!-- Services, Feedback, Contact, Direction sections kekal sama -->
+</main>
 
     <section id="services-section" class="hidden">
       <h2>Services</h2>
@@ -109,3 +110,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
