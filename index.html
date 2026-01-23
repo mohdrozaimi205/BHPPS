@@ -23,13 +23,6 @@
       <div id="aboutGallery" class="gallery"></div>
     </section>
 
-    <section id="admin-section" class="hidden">
-      <h2>Control Panel</h2>
-      <p>Muat naik gambar untuk About:</p>
-      <input type="file" id="adminUpload" accept="image/*" multiple>
-      <button id="clearGalleryBtn">Clear Gallery</button>
-    </section>
-
     <section id="services-section" class="hidden">
       <h2>Services</h2>
       <div class="services-card">
@@ -87,6 +80,14 @@
         allowfullscreen="" loading="lazy">
       </iframe>
     </section>
+
+    <!-- Tab Admin baru -->
+    <section id="admin-section" class="hidden">
+      <h2>Control Panel</h2>
+      <p>Muat naik gambar untuk About:</p>
+      <input type="file" id="adminUpload" accept="image/*" multiple>
+      <button id="clearGalleryBtn">Clear Gallery</button>
+    </section>
   </main>
 
   <nav class="bottom-nav">
@@ -95,6 +96,7 @@
     <button data-tab="feedback">Feedback</button>
     <button data-tab="contact">Contact Us</button>
     <button data-tab="direction">Direction</button>
+    <!-- Admin tab akan ditambah melalui JS selepas password -->
   </nav>
 
   <footer class="footer">
