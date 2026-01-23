@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Feedback form submission using emailjs.send()
+  // Feedback form submission using EmailJS
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       message: message
     };
 
+    // Guna Service ID & Template ID yang Abang Mie dah set
     emailjs.send("service_eic2gqf", "template_y3w6ice", templateParams)
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
