@@ -1,12 +1,11 @@
 body { margin:0; font-family:Arial,sans-serif; background:#e6f2ff; color:#333; }
 
 .header {
-  position:relative; text-align:center; background:#99ccff;
+  text-align:center; background:#99ccff;
   padding:20px; border-radius:0 0 30px 30px;
 }
 .header h1 { margin:0; font-size:28px; color:#003366; cursor:pointer; }
 .header p { margin:0; font-size:14px; color:#004080; }
-.gear { position:absolute; top:15px; right:15px; cursor:pointer; font-size:22px; }
 
 .container { padding:20px; text-align:center; }
 
