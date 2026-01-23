@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
         content.classList.add("hidden");
         servicesSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "about") {
-        content.innerHTML = `<h2>About</h2><p>Portal ini dibangunkan oleh Abang Mie untuk komuniti dan pelanggan.</p>`;
+        content.innerHTML = `<h2>About</h2>
+          <p>Portal ini dibangunkan oleh Abang Mie untuk komuniti dan pelanggan.</p>`;
       } else {
-        content.innerHTML = `<h2>${btn.innerText}</h2><p>Kandungan kosong untuk ${btn.innerText}.</p>`;
+        content.innerHTML = `<h2>${btn.innerText}</h2>
+          <p>Kandungan kosong untuk ${btn.innerText}.</p>`;
       }
     });
   });
@@ -41,9 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#feedbackForm")
+    // Gantikan dengan Service ID & Template ID dari EmailJS dashboard
+    emailjs.sendForm("service_gmail", "template_feedback", "#feedbackForm")
       .then(() => {
-        alert("Feedback berjaya dihantar ke email Abang Mie!");
+        alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
         feedbackForm.reset();
       }, (error) => {
         console.error("Error:", error);
