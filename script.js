@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Hide semua section dulu
       formSection.classList.add("hidden");
       directionSection.classList.add("hidden");
       contactSection.classList.add("hidden");
@@ -31,22 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Feedback form submission using EmailJS
+  // Feedback form submission using sendForm
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = feedbackForm.user_name.value;
-    const email = feedbackForm.user_email.value;
-    const message = feedbackForm.message.value;
-
-    const templateParams = {
-      user_name: name,
-      user_email: email,
-      message: message
-    };
-
-    // Guna Service ID & Template ID yang Abang Mie dah set
-    emailjs.send("service_eic2gqf", "template_y3w6ice", templateParams)
+    emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
         feedbackForm.reset();
