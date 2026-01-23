@@ -76,8 +76,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.createElement("img");
         img.src = ev.target.result;
         aboutGallery.appendChild(img);
+
+        // Simpan ke localStorage
+        saveImageToLocalStorage(ev.target.result);
       };
       reader.readAsDataURL(file);
     }
   });
+
+  // Simpan gambar ke localStorage
+  function saveImageToLocalStorage(imgData) {
+    let storedImages = JSON.parse(localStorage.getItem("aboutImages")) || [];
+    storedImages.push(imgData);
+    localStorage.setItem("aboutImages", JSON.stringify(storedImages));
+  }
+
+  // Load gambar dari localStorage bila page dibuka
+  function loadImagesFromLocalStorage() {
+    let storedImages = JSON.parse(localStorage.getItem("aboutImages")) || [];
+    storedImages.forEach(imgData => {
+      const img = document.createElement("img");
+      img.src = imgData;
+      aboutGallery.appendChild(img);
+    });
+  }
+
+  loadImagesFromLocalStorage();
 });
