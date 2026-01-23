@@ -1,10 +1,12 @@
+/* Reset & Base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #e6f2ff;
+  background: #e6f2ff; /* biru lembut */
   color: #333;
 }
 
+/* Header */
 .header {
   text-align: center;
   background: #99ccff;
@@ -24,12 +26,14 @@ body {
   color: #004080;
 }
 
+/* Container */
 .container {
   min-height: 60vh;
   padding: 20px;
   text-align: center;
 }
 
+/* Bottom Navigation */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -57,6 +61,7 @@ body {
   color: white;
 }
 
+/* Responsive untuk fon kecil */
 @media (max-width: 480px) {
   .bottom-nav button {
     font-size: 11px;
@@ -65,10 +70,32 @@ body {
   }
 }
 
+/* Hidden sections */
 .hidden {
   display: none;
 }
 
+/* Services */
+.services-card {
+  background: #cce6ff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  display: inline-block;
+  line-height: 1.8;
+}
+
+.services-card h3 {
+  color: #003366;
+  margin-top: 10px;
+}
+
+.services-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Contact */
 .contact-card {
   background: #cce6ff;
   padding: 15px;
@@ -78,6 +105,7 @@ body {
   line-height: 1.6;
 }
 
+/* Feedback Form */
 #form-section form {
   display: flex;
   flex-direction: column;
@@ -91,6 +119,7 @@ body {
   border: 1px solid #99ccff;
 }
 
+/* Direction */
 #direction-section {
   padding: 20px;
   text-align: center;
@@ -103,6 +132,7 @@ body {
   height: 450px;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   background: #99ccff;
@@ -110,5 +140,5 @@ body {
   border-radius: 30px 30px 0 0;
   font-size: 12px;
   color: #003366;
-  margin-bottom: 60px;
+  margin-bottom: 60px; /* space for nav */
 }
