@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Hide all sections
       formSection.classList.add("hidden");
       directionSection.classList.add("hidden");
       contactSection.classList.add("hidden");
@@ -39,19 +38,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Feedback form submission with EmailJS
+  // Feedback form submission using emailjs.send()
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Gantikan dengan Service ID & Template ID dari EmailJS dashboard
-    emailjs.sendForm("service_eic2gqf", "template_feedback", "#feedbackForm")
+    const name = feedbackForm.user_name.value;
+    const email = feedbackForm.user_email.value;
+    const message = feedbackForm.message.value;
+
+    const templateParams = {
+      user_name: name,
+      user_email: email,
+      message: message
+    };
+
+    emailjs.send("service_eic2gqf", "template_vsa9nvt", templateParams)
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
         feedbackForm.reset();
       }, (error) => {
-        console.error("Error:", error);
+        console.error("EmailJS Error:", error);
         alert("Ada masalah hantar email. Sila cuba lagi.");
       });
   });
 });
-
