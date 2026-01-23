@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalImg = document.getElementById("modalImg");
   const closeModal = document.getElementById("closeModal");
 
+  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
