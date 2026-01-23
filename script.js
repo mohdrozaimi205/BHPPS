@@ -10,27 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+      // Hide semua section dulu
       formSection.classList.add("hidden");
       directionSection.classList.add("hidden");
       contactSection.classList.add("hidden");
       servicesSection.classList.add("hidden");
-      content.classList.remove("hidden");
+      content.classList.add("hidden");
 
       if (btn.dataset.tab === "feedback") {
-        content.classList.add("hidden");
         formSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "direction") {
-        content.classList.add("hidden");
         directionSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "contact") {
-        content.classList.add("hidden");
         contactSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "services") {
-        content.classList.add("hidden");
         servicesSection.classList.remove("hidden");
       } else if (btn.dataset.tab === "about") {
-        content.innerHTML = `<h2>About</h2>
-          <p>Portal ini dibangunkan oleh Abang Mie untuk komuniti dan pelanggan.</p>`;
+        content.classList.remove("hidden");
       }
     });
   });
