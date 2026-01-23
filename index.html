@@ -1,90 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abang Mie Portal</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <h1>Abang Mie</h1>
-    <p>Personal Web Portal</p>
-  </header>
+<main class="container">
+  <!-- Default Content -->
+  <section id="content">
+    <h2>Welcome</h2>
+    <p>Selamat datang ke Portal Abang Mie.</p>
+  </section>
 
-  <main class="container">
-    <!-- Default Content -->
-    <section id="content">
-      <h2>Welcome</h2>
-      <p>Portal kosong untuk preview.</p>
-    </section>
+  <!-- Services Section -->
+  <section id="services-section" class="hidden">
+    <h2>Services</h2>
+    <div class="services-card">
+      <h3>Stesen Minyak BHPetrol</h3>
+      <ul>
+        <li>Infiniti RON95</li>
+        <li>Infiniti RON97</li>
+        <li>Diesel Euro5 B10</li>
+        <li>Diesel Euro5 B7</li>
+      </ul>
 
-    <!-- Feedback Section -->
-    <section id="form-section" class="hidden">
-      <form id="feedbackForm">
-        <h2>Feedback Form</h2>
-        <label>Name:</label>
-        <input type="text" name="user_name" required>
-        <label>Email:</label>
-        <input type="email" name="user_email" required>
-        <label>Message:</label>
-        <textarea name="message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+      <h3>BHPetroMart</h3>
+      <ul>
+        <li>Touch N Go Reload</li>
+        <li>E-Wallet Payment</li>
+        <li>Prepaid Top-up</li>
+        <li>ATM Bank Islam</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact-section" class="hidden">
-      <h2>Contact Us</h2>
-      <div class="contact-card">
-        <p><strong>Abang Mie (Rozaimi)</strong></p>
-        <p>Pengurus</p>
-        <p>BHPetrol Padang Serai</p>
-        <p>No 349, Jalan Mahsuri 2A</p>
-        <p>Taman Mahsuri</p>
-        <p>09400 Padang Serai</p>
-        <p>Kulim, Kedah</p>
-        <p>Tel : <a href="tel:+6044886457">+604-4886457</a></p>
-      </div>
-    </section>
+  <!-- Feedback Section -->
+  <section id="form-section" class="hidden">
+    <form id="feedbackForm">
+      <h2>Feedback Form</h2>
+      <label>Name:</label>
+      <input type="text" name="user_name" required>
+      <label>Email:</label>
+      <input type="email" name="user_email" required>
+      <label>Message:</label>
+      <textarea name="message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-    <!-- Direction Section -->
-    <section id="direction-section" class="hidden">
-      <h2>Direction</h2>
-      <iframe
-        src="https://www.google.com/maps?q=5.514619644612528,100.53934019611795&hl=ms&z=17&output=embed"
-        width="100%"
-        height="450"
-        style="border:0; border-radius:15px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact-section" class="hidden">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <p><strong>Abang Mie (Rozaimi)</strong></p>
+      <p>Pengurus</p>
+      <p>BHPetrol Padang Serai</p>
+      <p>No 349, Jalan Mahsuri 2A</p>
+      <p>Taman Mahsuri</p>
+      <p>09400 Padang Serai</p>
+      <p>Kulim, Kedah</p>
+      <p>Tel : <a href="tel:+6044886457">+604-4886457</a></p>
+      <p>Email : <a href="mailto:mohdrozaimi205@gmail.com">mohdrozaimi205@gmail.com</a></p>
+    </div>
+  </section>
 
-  <!-- Navigation Tabs -->
-  <nav class="bottom-nav">
-    <button data-tab="about">About</button>
-    <button data-tab="services">Services</button>
-    <button data-tab="feedback">Feedback</button>
-    <button data-tab="contact">Contact Us</button>
-    <button data-tab="direction">Direction</button>
-  </nav>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2026 Abang Mie</p>
-  </footer>
-
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("y17V-oO2DOdemWRZr"); // Public Key
-    })();
-  </script>
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Direction Section -->
+  <section id="direction-section" class="hidden">
+    <h2>Direction</h2>
+    <iframe
+      src="https://www.google.com/maps?q=5.514619644612528,100.53934019611795&hl=ms&z=17&output=embed"
+      width="100%"
+      height="450"
+      style="border:0; border-radius:15px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+</main>
