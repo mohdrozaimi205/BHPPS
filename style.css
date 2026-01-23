@@ -43,7 +43,6 @@ body { margin:0; font-family:Arial,sans-serif; background:#e6f2ff; color:#333; }
 .gallery img {
   width:150px; height:150px; object-fit:cover;
   border-radius:10px; border:2px solid #99ccff;
-  cursor:pointer;
 }
 
 #clearGalleryBtn {
@@ -52,19 +51,6 @@ body { margin:0; font-family:Arial,sans-serif; background:#e6f2ff; color:#333; }
   border-radius:10px; cursor:pointer;
 }
 #clearGalleryBtn:hover { background:#cc0000; }
-
-.modal {
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.8); display:flex;
-  justify-content:center; align-items:center;
-}
-.modal img {
-  max-width:90%; max-height:90%; border-radius:10px;
-}
-#closeModal {
-  position:absolute; top:20px; right:30px;
-  font-size:40px; color:white; cursor:pointer;
-}
 
 .footer {
   text-align:center; background:#99ccff; padding:10px;
