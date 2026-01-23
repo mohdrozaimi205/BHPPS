@@ -6,49 +6,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const directionSection = document.getElementById("direction-section");
   const contactSection = document.getElementById("contact-section");
   const servicesSection = document.getElementById("services-section");
+  const adminSection = document.getElementById("admin-section");
   const feedbackForm = document.getElementById("feedbackForm");
   const homeTitle = document.getElementById("homeTitle");
   const gear = document.getElementById("controlPanel");
-  const imageUpload = document.getElementById("imageUpload");
+  const adminUpload = document.getElementById("adminUpload");
   const aboutGallery = document.getElementById("aboutGallery");
 
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      content.classList.add("hidden");
-      aboutSection.classList.add("hidden");
-      formSection.classList.add("hidden");
-      directionSection.classList.add("hidden");
-      contactSection.classList.add("hidden");
-      servicesSection.classList.add("hidden");
-
-      if (btn.dataset.tab === "feedback") {
-        formSection.classList.remove("hidden");
-      } else if (btn.dataset.tab === "direction") {
-        directionSection.classList.remove("hidden");
-      } else if (btn.dataset.tab === "contact") {
-        contactSection.classList.remove("hidden");
-      } else if (btn.dataset.tab === "services") {
-        servicesSection.classList.remove("hidden");
-      } else if (btn.dataset.tab === "about") {
-        aboutSection.classList.remove("hidden");
-      } else {
-        content.classList.remove("hidden");
-      }
+      hideAll();
+      if (btn.dataset.tab === "feedback") formSection.classList.remove("hidden");
+      else if (btn.dataset.tab === "direction") directionSection.classList.remove("hidden");
+      else if (btn.dataset.tab === "contact") contactSection.classList.remove("hidden");
+      else if (btn.dataset.tab === "services") servicesSection.classList.remove("hidden");
+      else if (btn.dataset.tab === "about") aboutSection.classList.remove("hidden");
+      else content.classList.remove("hidden");
     });
   });
 
-  // Klik tajuk untuk balik Home
-  homeTitle.addEventListener("click", () => {
-    content.classList.remove("hidden");
+  function hideAll() {
+    content.classList.add("hidden");
     aboutSection.classList.add("hidden");
     formSection.classList.add("hidden");
     directionSection.classList.add("hidden");
     contactSection.classList.add("hidden");
     servicesSection.classList.add("hidden");
+    adminSection.classList.add("hidden");
+  }
+
+  // Klik tajuk untuk balik Home
+  homeTitle.addEventListener("click", () => {
+    hideAll();
+    content.classList.remove("hidden");
   });
 
-  // Feedback form submission using sendForm
+  // Feedback form submission
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
     emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
@@ -61,17 +55,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Gear icon dengan password untuk upload gambar
+  // Gear icon → password → buka Control Panel
   gear.addEventListener("click", () => {
     const password = prompt("Masukkan password untuk buka Control Panel:");
     if (password === "bhpetrolpadangserai123") {
-      imageUpload.click(); // buka file picker kalau password betul
+      hideAll();
+      adminSection.classList.remove("hidden");
     } else {
       alert("Password salah!");
     }
   });
 
-  imageUpload.addEventListener("change", (e) => {
+  // Upload gambar dari Control Panel → masuk ke About
+  adminUpload.addEventListener("change", (e) => {
     const files = e.target.files;
     for (let file of files) {
       const reader = new FileReader();
