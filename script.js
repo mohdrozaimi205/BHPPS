@@ -6,12 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const directionSection = document.getElementById("direction-section");
   const contactSection = document.getElementById("contact-section");
   const servicesSection = document.getElementById("services-section");
-  const adminSection = document.getElementById("admin-section");
   const feedbackForm = document.getElementById("feedbackForm");
   const homeTitle = document.getElementById("homeTitle");
-  const adminUpload = document.getElementById("adminUpload");
-  const clearGalleryBtn = document.getElementById("clearGalleryBtn");
-  const aboutGallery = document.getElementById("aboutGallery");
 
   function hideAll() {
     content.classList.add("hidden");
@@ -20,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     directionSection.classList.add("hidden");
     contactSection.classList.add("hidden");
     servicesSection.classList.add("hidden");
-    adminSection.classList.add("hidden");
   }
 
   function showTab(tab) {
@@ -31,15 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       case "contact": contactSection.classList.remove("hidden"); break;
       case "services": servicesSection.classList.remove("hidden"); break;
       case "about": aboutSection.classList.remove("hidden"); break;
-      case "admin":
-        const password = prompt("Masukkan password untuk masuk Admin:");
-        if (password === "bhpetrol123") {
-          adminSection.classList.remove("hidden");
-        } else {
-          alert("Password salah!");
-          content.classList.remove("hidden");
-        }
-        break;
       default: content.classList.remove("hidden");
     }
   }
@@ -67,45 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }, () => alert("Ada masalah hantar email."));
     });
   }
-
-  // Upload gambar → masuk ke About
-  adminUpload.addEventListener("change", (e) => {
-    const files = e.target.files;
-    for (let file of files) {
-      const reader = new FileReader();
-      reader.onload = function(ev) {
-        const img = document.createElement("img");
-        img.src = ev.target.result;
-        aboutGallery.appendChild(img);
-        saveImageToLocalStorage(ev.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
-  // Clear Gallery
-  clearGalleryBtn.addEventListener("click", () => {
-    localStorage.removeItem("aboutImages");
-    aboutGallery.innerHTML = "";
-    alert("Gallery telah dikosongkan!");
-  });
-
-  // Simpan gambar ke localStorage
-  function saveImageToLocalStorage(imgData) {
-    let storedImages = JSON.parse(localStorage.getItem("aboutImages")) || [];
-    storedImages.push(imgData);
-    localStorage.setItem("aboutImages", JSON.stringify(storedImages));
-  }
-
-  // Load gambar dari localStorage
-  function loadImagesFromLocalStorage() {
-    let storedImages = JSON.parse(localStorage.getItem("aboutImages")) || [];
-    storedImages.forEach(imgData => {
-      const img = document.createElement("img");
-      img.src = imgData;
-      aboutGallery.appendChild(img);
-    });
-  }
-
-  loadImagesFromLocalStorage();
 });
