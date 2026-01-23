@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
 
+  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -107,5 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Bila page mula → load gambar
   loadImagesFromLocalStorage();
 });
