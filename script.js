@@ -31,9 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (btn.dataset.tab === "about") {
         content.innerHTML = `<h2>About</h2>
           <p>Portal ini dibangunkan oleh Abang Mie untuk komuniti dan pelanggan.</p>`;
-      } else {
-        content.innerHTML = `<h2>${btn.innerText}</h2>
-          <p>Kandungan kosong untuk ${btn.innerText}.</p>`;
       }
     });
   });
@@ -52,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       message: message
     };
 
-    emailjs.send("service_eic2gqf", "template_vsa9nvt", templateParams)
+    emailjs.send("service_eic2gqf", "template_y3w6ice", templateParams)
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
         feedbackForm.reset();
