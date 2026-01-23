@@ -13,6 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminUpload = document.getElementById("adminUpload");
   const aboutGallery = document.getElementById("aboutGallery");
 
+  // Fungsi hide semua section
+  function hideAll() {
+    content.classList.add("hidden");
+    aboutSection.classList.add("hidden");
+    formSection.classList.add("hidden");
+    directionSection.classList.add("hidden");
+    contactSection.classList.add("hidden");
+    servicesSection.classList.add("hidden");
+    adminSection.classList.add("hidden");
+  }
+
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -26,16 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function hideAll() {
-    content.classList.add("hidden");
-    aboutSection.classList.add("hidden");
-    formSection.classList.add("hidden");
-    directionSection.classList.add("hidden");
-    contactSection.classList.add("hidden");
-    servicesSection.classList.add("hidden");
-    adminSection.classList.add("hidden");
-  }
-
   // Klik tajuk untuk balik Home
   homeTitle.addEventListener("click", () => {
     hideAll();
@@ -43,17 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Feedback form submission
-  feedbackForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
-      .then(() => {
-        alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
-        feedbackForm.reset();
-      }, (error) => {
-        console.error("EmailJS Error:", error);
-        alert("Ada masalah hantar email. Sila cuba lagi.");
-      });
-  });
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
+        .then(() => {
+          alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
+          feedbackForm.reset();
+        }, (error) => {
+          console.error("EmailJS Error:", error);
+          alert("Ada masalah hantar email. Sila cuba lagi.");
+        });
+    });
+  }
 
   // Gear icon → password → buka Control Panel
   gear.addEventListener("click", () => {
