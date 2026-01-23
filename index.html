@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal Abang Mie</title>
+  <title>BHPetrol Padang Serai</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <h1>Portal Abang Mie</h1>
+    <h1 id="homeTitle">BHPetrol Padang Serai</h1>
     <p>Selamat datang ke portal rasmi BHPetrol Padang Serai</p>
+    <div id="controlPanel" class="gear">⚙️</div>
   </header>
 
   <main class="container">
@@ -18,28 +19,32 @@
       <p>Selamat datang ke Portal Abang Mie.</p>
     </section>
 
-   <section id="services-section" class="hidden">
-  <h2>Services</h2>
-  <div class="services-card">
-    <h3>Stesen Minyak BHPetrol</h3>
-    <ul>
-      <li>Infiniti RON95</li>
-      <li>Infiniti RON97</li>
-      <li>Diesel Euro5 B10</li>
-      <li>Diesel Euro5 B7</li>
-      <li>Tyre Inflator</li> <!-- ✅ Tambah baru -->
-    </ul>
+    <section id="about-section" class="hidden">
+      <h2>About</h2>
+      <div id="aboutGallery" class="gallery"></div>
+    </section>
 
-    <h3>BHPetroMart</h3>
-    <ul>
-      <li>Touch N Go Reload</li>
-      <li>E-Wallet Payment</li>
-      <li>Prepaid Top-up</li>
-      <li>ATM Bank Islam</li>
-      <li>Redemption Merchant Item</li> <!-- ✅ Tambah baru -->
-    </ul>
-  </div>
-</section>
+    <section id="services-section" class="hidden">
+      <h2>Services</h2>
+      <div class="services-card">
+        <h3>Stesen Minyak BHPetrol</h3>
+        <ul>
+          <li>Infiniti RON95</li>
+          <li>Infiniti RON97</li>
+          <li>Diesel Euro5 B10</li>
+          <li>Diesel Euro5 B7</li>
+          <li>Tyre Inflator</li>
+        </ul>
+        <h3>BHPetroMart</h3>
+        <ul>
+          <li>Touch N Go Reload</li>
+          <li>E-Wallet Payment</li>
+          <li>Prepaid Top-up</li>
+          <li>ATM Bank Islam</li>
+          <li>Redemption Merchant Item</li>
+        </ul>
+      </div>
+    </section>
 
     <section id="form-section" class="hidden">
       <form id="feedbackForm">
@@ -94,14 +99,14 @@
     <p>&copy; 2026 Abang Mie</p>
   </footer>
 
-  <!-- EmailJS SDK -->
+  <input type="file" id="imageUpload" accept="image/*" multiple style="display:none;">
+
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("y17V-oO2DOdemWRZr"); // Public Key
+      emailjs.init("y17V-oO2DOdemWRZr");
     })();
   </script>
   <script src="script.js"></script>
 </body>
 </html>
-
