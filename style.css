@@ -120,9 +120,16 @@ body {
 }
 
 /* Direction */
+#direction-section {
+  padding: 20px;
+  text-align: center;
+}
+
 #direction-section iframe {
   margin-top: 10px;
   border-radius: 15px;
+  width: 100%;
+  height: 450px;
 }
 
 /* Footer */
