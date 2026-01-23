@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Ambil semua elemen
   const navButtons = document.querySelectorAll(".bottom-nav button");
   const content = document.getElementById("content");
   const aboutSection = document.getElementById("about-section");
@@ -14,11 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminUpload = document.getElementById("adminUpload");
   const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
-  const imageModal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  const closeModal = document.getElementById("closeModal");
 
-  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -34,23 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       hideAll();
       switch (btn.dataset.tab) {
-        case "feedback":
-          formSection.classList.remove("hidden");
-          break;
-        case "direction":
-          directionSection.classList.remove("hidden");
-          break;
-        case "contact":
-          contactSection.classList.remove("hidden");
-          break;
-        case "services":
-          servicesSection.classList.remove("hidden");
-          break;
-        case "about":
-          aboutSection.classList.remove("hidden");
-          break;
-        default:
-          content.classList.remove("hidden");
+        case "feedback": formSection.classList.remove("hidden"); break;
+        case "direction": directionSection.classList.remove("hidden"); break;
+        case "contact": contactSection.classList.remove("hidden"); break;
+        case "services": servicesSection.classList.remove("hidden"); break;
+        case "about": aboutSection.classList.remove("hidden"); break;
+        default: content.classList.remove("hidden");
       }
     });
   });
@@ -92,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
       reader.onload = function(ev) {
         const img = document.createElement("img");
         img.src = ev.target.result;
-        img.addEventListener("click", () => openModal(ev.target.result));
         aboutGallery.appendChild(img);
         saveImageToLocalStorage(ev.target.result);
       };
@@ -120,20 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     storedImages.forEach(imgData => {
       const img = document.createElement("img");
       img.src = imgData;
-      img.addEventListener("click", () => openModal(imgData));
       aboutGallery.appendChild(img);
     });
   }
 
-  // Modal view
-  function openModal(src) {
-    modalImg.src = src;
-    imageModal.classList.remove("hidden");
-  }
-  closeModal.addEventListener("click", () => {
-    imageModal.classList.add("hidden");
-  });
-
-  // Load gambar bila page mula
   loadImagesFromLocalStorage();
 });
