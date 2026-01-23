@@ -14,18 +14,15 @@
   </header>
 
   <main class="container">
-    <!-- Home -->
     <section id="content">
       <h2>Welcome! Selamat Datang!</h2>
     </section>
 
-    <!-- About -->
     <section id="about-section" class="hidden">
       <h2>About</h2>
       <div id="aboutGallery" class="gallery"></div>
     </section>
 
-    <!-- Control Panel (gear only) -->
     <section id="admin-section" class="hidden">
       <h2>Control Panel</h2>
       <p>Muat naik gambar untuk About:</p>
@@ -33,7 +30,6 @@
       <button id="clearGalleryBtn">Clear Gallery</button>
     </section>
 
-    <!-- Services -->
     <section id="services-section" class="hidden">
       <h2>Services</h2>
       <div class="services-card">
@@ -56,7 +52,6 @@
       </div>
     </section>
 
-    <!-- Feedback -->
     <section id="form-section" class="hidden">
       <form id="feedbackForm">
         <h2>Feedback Form</h2>
@@ -70,7 +65,6 @@
       </form>
     </section>
 
-    <!-- Contact -->
     <section id="contact-section" class="hidden">
       <h2>Contact Us</h2>
       <div class="contact-card">
@@ -85,17 +79,12 @@
       </div>
     </section>
 
-    <!-- Direction -->
     <section id="direction-section" class="hidden">
       <h2>Direction</h2>
       <iframe
         src="https://www.google.com/maps?q=5.514619644612528,100.53934019611795&hl=ms&z=17&output=embed"
-        width="100%"
-        height="450"
-        style="border:0; border-radius:15px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        width="100%" height="450" style="border:0; border-radius:15px;"
+        allowfullscreen="" loading="lazy">
       </iframe>
     </section>
   </main>
@@ -112,17 +101,9 @@
     <p>&copy; 2026 Abang Mie</p>
   </footer>
 
-  <!-- Modal untuk gambar besar -->
-  <div id="imageModal" class="modal hidden">
-    <span id="closeModal">&times;</span>
-    <img id="modalImg" src="" alt="Full view">
-  </div>
-
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init("y17V-oO2DOdemWRZr");
-    })();
+    (function(){ emailjs.init("y17V-oO2DOdemWRZr"); })();
   </script>
   <script src="script.js"></script>
 </body>
