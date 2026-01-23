@@ -25,14 +25,13 @@
       <div id="aboutGallery" class="gallery"></div>
     </section>
 
-    <!-- Control Panel (hanya gear) -->
-  <section id="admin-section" class="hidden">
-    <h2>Control Panel</h2>
-    <p>Muat naik gambar untuk About:</p>
-    <input type="file" id="adminUpload" accept="image/*" multiple>
-    <button id="clearGalleryBtn">Clear Gallery</button>
-  </section>
-
+    <!-- Control Panel (gear only) -->
+    <section id="admin-section" class="hidden">
+      <h2>Control Panel</h2>
+      <p>Muat naik gambar untuk About:</p>
+      <input type="file" id="adminUpload" accept="image/*" multiple>
+      <button id="clearGalleryBtn">Clear Gallery</button>
+    </section>
 
     <!-- Services -->
     <section id="services-section" class="hidden">
@@ -101,13 +100,6 @@
     </section>
   </main>
 
-  <!-- Modal untuk gambar besar -->
-<div id="imageModal" class="modal hidden">
-  <span id="closeModal">&times;</span>
-  <img id="modalImg" src="" alt="Full view">
-</div>
-
-
   <nav class="bottom-nav">
     <button data-tab="about">About</button>
     <button data-tab="services">Services</button>
@@ -120,6 +112,12 @@
     <p>&copy; 2026 Abang Mie</p>
   </footer>
 
+  <!-- Modal untuk gambar besar -->
+  <div id="imageModal" class="modal hidden">
+    <span id="closeModal">&times;</span>
+    <img id="modalImg" src="" alt="Full view">
+  </div>
+
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
@@ -129,4 +127,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
