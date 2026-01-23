@@ -9,12 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminSection = document.getElementById("admin-section");
   const feedbackForm = document.getElementById("feedbackForm");
   const homeTitle = document.getElementById("homeTitle");
-  const gear = document.getElementById("controlPanel");
   const adminUpload = document.getElementById("adminUpload");
   const clearGalleryBtn = document.getElementById("clearGalleryBtn");
   const aboutGallery = document.getElementById("aboutGallery");
-  const bottomNav = document.querySelector(".bottom-nav");
 
+  // Fungsi hide semua section
   function hideAll() {
     content.classList.add("hidden");
     aboutSection.classList.add("hidden");
@@ -34,7 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
       case "contact": contactSection.classList.remove("hidden"); break;
       case "services": servicesSection.classList.remove("hidden"); break;
       case "about": aboutSection.classList.remove("hidden"); break;
-      case "admin": adminSection.classList.remove("hidden"); break;
+      case "admin":
+        const password = prompt("Masukkan password untuk masuk Admin:");
+        if (password === "bhpetrol123") {
+          adminSection.classList.remove("hidden");
+        } else {
+          alert("Password salah!");
+          content.classList.remove("hidden"); // fallback balik ke Home
+        }
+        break;
       default: content.classList.remove("hidden");
     }
   }
@@ -62,24 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, () => alert("Ada masalah hantar email."));
     });
   }
-
-  // Gear icon → password → tambah tab Admin
-  gear.addEventListener("click", () => {
-    const password = prompt("Masukkan password untuk buka Admin:");
-    if (password === "bhpetrolpadangserai123") {
-      // Tambah butang Admin jika belum ada
-      if (!document.querySelector("button[data-tab='admin']")) {
-        const adminBtn = document.createElement("button");
-        adminBtn.textContent = "Admin";
-        adminBtn.dataset.tab = "admin";
-        bottomNav.appendChild(adminBtn);
-        adminBtn.addEventListener("click", () => showTab("admin"));
-      }
-      showTab("admin");
-    } else {
-      alert("Password salah!");
-    }
-  });
 
   // Upload gambar → masuk ke About
   adminUpload.addEventListener("change", (e) => {
@@ -120,5 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Bila page mula → load gambar
   loadImagesFromLocalStorage();
 });
