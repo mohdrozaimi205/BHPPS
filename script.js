@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navigation tab logic
   navButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Hide semua section dulu
       content.classList.add("hidden");
       aboutSection.classList.add("hidden");
       formSection.classList.add("hidden");
@@ -52,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Feedback form submission using sendForm
   feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     emailjs.sendForm("service_eic2gqf", "template_y3w6ice", "#feedbackForm")
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
@@ -63,9 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Gear icon untuk upload gambar ke About
+  // Gear icon dengan password untuk upload gambar
   gear.addEventListener("click", () => {
-    imageUpload.click(); // buka file picker
+    const password = prompt("Masukkan password untuk buka Control Panel:");
+    if (password === "bhpetrolpadangserai123") {
+      imageUpload.click(); // buka file picker kalau password betul
+    } else {
+      alert("Password salah!");
+    }
   });
 
   imageUpload.addEventListener("change", (e) => {
@@ -76,8 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.createElement("img");
         img.src = ev.target.result;
         aboutGallery.appendChild(img);
-
-        // Simpan ke localStorage
         saveImageToLocalStorage(ev.target.result);
       };
       reader.readAsDataURL(file);
