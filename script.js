@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     // Gantikan dengan Service ID & Template ID dari EmailJS dashboard
-    emailjs.sendForm("service_gmail", "template_feedback", "#feedbackForm")
+    emailjs.sendForm("service_eic2gqf", "template_feedback", "#feedbackForm")
       .then(() => {
         alert("Feedback berjaya dihantar ke email mohdrozaimi205@gmail.com!");
         feedbackForm.reset();
@@ -54,3 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
