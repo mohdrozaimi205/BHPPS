@@ -62,8 +62,24 @@ body {
   display: none;
 }
 
-/* Services & Contact card */
-.services-card,
+/* Services dua column */
+.services-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.services-card {
+  background: #cce6ff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 1.8;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Contact card */
 .contact-card {
   background: #cce6ff;
   padding: 20px;
@@ -101,7 +117,7 @@ body {
 .link-list {
   list-style: none;
   padding: 0;
-  text-align: center; /* center semua link */
+  text-align: center;
   margin-top: 15px;
 }
 .link-list li {
