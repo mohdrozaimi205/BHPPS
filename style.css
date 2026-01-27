@@ -146,3 +146,11 @@ body {
   color: #003366;
   margin-bottom: 60px; /* ruang untuk nav bawah */
 }
+
+.home-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 15px;
+  border: 2px solid #99ccff;
+}
